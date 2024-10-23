@@ -6,7 +6,10 @@ const axios = require('axios');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 const url = 'https://api.openai.com/v1/chat/completions';
+const express = require('express');
+const app = express();
 
+app.use(express.urlencoded({ extended: true }));
 
 async function handleRequest(req,res){
     try{
@@ -42,10 +45,10 @@ async function handleRequest(req,res){
             inputQuery = inputQuery.replace("%3C", "<");
         }
         
-        let topic = "";
-        let question = "";
+        let topic = req.body.topic;
+        let question = req.body.question;
 
-        
+        InputForChatGPT += "Es geht um das Thema "+topic+" und die ist Frage: "+question+"?";        
         console.log(InputForChatGPT)
         
         let response = await sendPrompt(InputForChatGPT);
@@ -68,10 +71,6 @@ async function handleRequest(req,res){
         res.end('Fehler bei der Anfrage an die ChatGPT API.');
     }
 }
-
-server = http.createServer(handleRequest);
-server.listen(9000);
-console.log("Webserver running on http://127.0.0.1:9000")
 
 async function sendPrompt(prompt) {
     return fetch(url, {
@@ -101,3 +100,22 @@ function handleResponse(response) {
     console.error(error);
 }
 //#endregion
+
+
+server = http.createServer(handleRequest);
+server.listen(9000);
+console.log("Webserver running on http://127.0.0.1:9000")
+server2 = http.createServer(handleContactFormular);
+server2.listen(63800);
+console.log("Webserver running on http://127.0.0.1:63800")
+
+
+function handleContactFormular(req,res){
+    let Name = req.body.name;
+    let Email = req.body.email;
+    let Betreff = req.body.betreff;
+    let Message = req.body.message;
+
+    fs.writeFileSync('C:\\ContactFormular.txt','Betreff: ' + Betreff +  '\nName: ' + Name + '\nEmail: ' + Email + '\nMessage: ' + Message + '\n');
+
+}
