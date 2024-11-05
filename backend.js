@@ -9,6 +9,7 @@ const url = 'https://api.openai.com/v1/chat/completions';
 const express = require('express');
 const app = express();
 
+let chat = [];
 app.use(express.urlencoded({ extended: true }));
 
 async function handleRequest(req,res){
@@ -54,7 +55,19 @@ async function handleRequest(req,res){
         let response = await sendPrompt(InputForChatGPT);
         let output = response.choices[0].message.content;
 
-        let html = fs.readFileSync('frontend_MakrosGen.html', 'utf8');
+        chat.push(InputForChatGPT);
+        chat.push(output);
+        let stringForOutputChat = "";
+        for(let i = 0; i<chat.length;i++){
+            if(i%2 != 0){
+                stringForOutputChat += '<div class="question">' + chat[i] + '</div>';
+            }
+            else{
+                stringForOutputChat += '<div class="answer">' + chat[i] + '</div>';
+            }
+        }
+
+        let html = fs.readFileSync('', 'utf8'); // name von der html-Datei einfügen
         let htmlResponse = html.replace('<textarea class="output" id="copyFunctionForText"></textarea>', '<textarea class="output" id="copyFunctionForText">'+output+'</textarea>');
 
         let css = fs.readFileSync('Style.css');
