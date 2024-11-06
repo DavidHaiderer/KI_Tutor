@@ -8,9 +8,29 @@ require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 const url = 'https://api.openai.com/v1/chat/completions';
 const express = require('express');
 const app = express();
-
 let chat = [];
+let stringForOutputChat = "";
 app.use(express.urlencoded({ extended: true }));
+
+server = http.createServer(handleRequest);
+server.listen(9000);
+console.log("Webserver running on http://127.0.0.1:9000")
+server2 = http.createServer(handleContactFormular);
+server2.listen(63800);
+console.log("Webserver running on http://127.0.0.1:63800")
+
+
+try{
+    fs.readFile('chatHistory.txt', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+    stringForOutputChat = data;
+});
+}catch (error) {
+    console.error(error);
+}
 
 async function handleRequest(req,res){
     try{
@@ -45,19 +65,33 @@ async function handleRequest(req,res){
             inputQuery = inputQuery.replace("%3E", ">");
             inputQuery = inputQuery.replace("%3C", "<");
         }
+        console.log(req)
+
+        let topic = "";if (req.url) {
+          let topic = req.url.split("topic=")[1];
+          // ...
+        } else {
+          console.error("req.url ist undefiniert");
+        }
+        topic = req.url.split("topic=")[1];
+        topic = topic.split("&")[0];
         
-        let topic = req.body.topic;
+        console.log(topic)
         let question = req.body.question;
 
-        InputForChatGPT += "Es geht um das Thema "+topic+" und die ist Frage: "+question+"?";        
+        InputForChatGPT += "Es geht um das Thema "+topic+" und die Frage ist: "+question+"?";        
         console.log(InputForChatGPT)
         
+        /*
         let response = await sendPrompt(InputForChatGPT);
         let output = response.choices[0].message.content;
+        */
+
+        output = "Geh in oasch du Hund i mog hiaz nd";
 
         chat.push(InputForChatGPT);
         chat.push(output);
-        let stringForOutputChat = "";
+        
         for(let i = 0; i<chat.length;i++){
             if(i%2 != 0){
                 stringForOutputChat += '<div class="question">' + chat[i] + '</div>';
@@ -66,6 +100,8 @@ async function handleRequest(req,res){
                 stringForOutputChat += '<div class="answer">' + chat[i] + '</div>';
             }
         }
+        
+        fs.writeFileSync('chatHistory.txt',stringForOutputChat);
 
         let html = fs.readFileSync('', 'utf8'); // name von der html-Datei einfügen
         let htmlResponse = html.replace('<textarea class="output" id="copyFunctionForText"></textarea>', '<textarea class="output" id="copyFunctionForText">'+output+'</textarea>');
@@ -74,7 +110,7 @@ async function handleRequest(req,res){
 
         // Antwort von der API zurücksenden
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.write(htmlResponse + `<style>${css}</style>`)
+        res.write(htmlResponse)
         
         res.end();
         
@@ -113,15 +149,6 @@ function handleResponse(response) {
     console.error(error);
 }
 //#endregion
-
-
-server = http.createServer(handleRequest);
-server.listen(9000);
-console.log("Webserver running on http://127.0.0.1:9000")
-server2 = http.createServer(handleContactFormular);
-server2.listen(63800);
-console.log("Webserver running on http://127.0.0.1:63800")
-
 
 function handleContactFormular(req,res){
     let Name = req.body.name;
