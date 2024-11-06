@@ -16,6 +16,15 @@
             width: 65px;
         }
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <style>
+        /* Setze die Höhe der Karte, damit sie sichtbar ist */
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,7 +32,7 @@
     </header>
     
     <div id="fred">
-        <img src="Frederick.png">
+        <img src="Frederick.jpg">
         Frederick Grurl
         <br>
         31 Jahre alt, HTL-Schüler<!--, übergewichtig, hässlich, breiter als der Türrahmen(keine Muskeln)-->
@@ -40,7 +49,7 @@
     </div>
     <div id="Simon">
         <img src="Simon.png">
-        Simon Puchebner
+        Simon Puchebner<!--, Eltern sind Geschwister, Schwer autistisch, Schwer behindert, Gay-Rights aktivist, Neo Nazi in Ausbildung bzw zum Obmann der seiner Meinung nach guten Bewegung--> 
         <br>
         17 Jahre alt, HTL-Schüler
         <br>
@@ -59,6 +68,11 @@
         <br>
         In diesem Projekt sollen die Schüler lernen in Teams zu arbeiten, sich selbst zu organisieren und eine eigene Webanwendung zu entwickeln
     </div>
+    
+    <h1>Standort der HTL Waidhofen</h1>
+    <div id="map"></div> <!-- Bereich für die Karte -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="map.js"></script>
     <footer>
         
     </footer>
