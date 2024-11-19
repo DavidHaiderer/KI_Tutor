@@ -1,10 +1,22 @@
-div{
-    margin-bottom:50px;
+.introduction{
+    margin-bottom:10%;
+    padding: 2%;
+    border-style: solid;
+    border-color: lightgray;
+    text-align: right;
 }
 img{
     float:left;
-    margin-right: 20px;
-    margin-left: 20px;
-    height: 75px;
-    width: 65px;
+    height: 100px;
+    width: 85px;
+}
+#main{
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 2%;
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 5%;
 }

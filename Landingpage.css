@@ -3,15 +3,14 @@ h4{
     color: snow;
 }
 #JetztStarten{
-    margin-top: 3.7%;
-    margin-left: 40%;
-    margin-right: 40%;
-    border-radius: 50%;
+    margin-top: 1%;
+    margin-left: 45%;
+    margin-right: 45%;
+    border-radius: 10%;
     border-style: none;
     background-color: cyan;
-    height: 300px;
-    width: 20%;
-    font-size: 40px;
+    height: auto;
+    width: 10%;
 }
 body{
     overflow: hidden;
@@ -28,4 +27,11 @@ body{
     height: 100%;
     object-fit: cover;
     z-index: -1;
+}
+img{
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
 }
