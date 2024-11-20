@@ -116,11 +116,13 @@ function handleError(error) {
 //#endregion
 
 function handleContactFormular(req,res){
-    let Name = req.body.name;
-    let Email = req.body.email;
-    let Betreff = req.body.betreff;
-    let Message = req.body.message;
+    let input = req.url + "";
 
-    fs.writeFileSync('C:\\ContactFormular.txt','Betreff: ' + Betreff +  '\nName: ' + Name + '\nEmail: ' + Email + '\nMessage: ' + Message + '\n');
+    let Name = input.split("name=")[1].split("&")[0];
+    let Email = input.split("email=")[1].split("&")[0];
+    let Betreff = input.split("betreff=")[1].split("&")[0];
+    let Message = input.split("message=")[1].split("&")[0];
+
+    fs.writeFileSync('ContactFormular.txt','Betreff: ' + Betreff +  '\nName: ' + Name + '\nEmail: ' + Email + '\nMessage: ' + Message + '\n'+'\n\n');
 
 }
