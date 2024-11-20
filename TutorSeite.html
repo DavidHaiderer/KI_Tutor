@@ -8,11 +8,8 @@
 
 </head>
 <body>
-    <video autoplay muted loop id="video">
-        <source src="krass.mp4" type="video/mp4">
-    </video>
     <nav>
-        <img src="Logo.png" style="float: left; width: 100px; height: 100px;">
+        <img src="Logo.png" id="pic">
 
         <div id="HeadLine">
             <br>
@@ -21,12 +18,12 @@
             </h1>
         </div>
         <header id="header">
-            <div id="hyperlink" value="TutorSeite">
+            <div id="hyperlink" value="Landingpage">
                 <a href="Landingpage.html">Landingpage</a>
             </div>
             
-            <div id="hyperlink" value="Erklärungsseite">
-                <a href="Erklärungsseite.html">Erklärung</a>
+            <div id="hyperlink" value="Erklaerungsseite">
+                <a href="Erklaerung.html">Erklärung</a>
             </div>
 
             <div id="hyperlink" value="TeamSeite">
@@ -39,16 +36,59 @@
         </header>
     </nav>
     <br>
-    <form action="127.0.0.1:9000" method="get">
-        <select name="topic">
-          <option value="Mathematik">Mathematik</option>
-          <option value="Latein">Latein</option>
-          <option value="Programmieren">Programmieren</option>
-          <option value="Sport">Sport</option>
-        </select>
-        <label>Eingabe:</label><input name="question" id="question" type="text">
-    </form>
 
-    <footer></footer>
+    <select name="topic">
+        <option value="Mathematik">Mathematik</option>
+        <option value="Latein">Latein</option>
+        <option value="Programmieren">Programmieren</option>
+        <option value="Sport">Sport</option>
+    </select>
+    <label>Eingabe:</label><input name="question" id="question" type="text">
+    
+    <button type="submit" onclick="sendPrompt(document.getElementById('question').value +'123Trenner321'+ document.getElementById('topic').value)">Senden</button>
+   
+    <div name="chatlog" id="chatlog"></div>
+
+    <footer id="footer">
+        <div id="hyperlink" value="Datenschutz">
+            <a href="Datenschutz.html">Datenschutz</a>
+        </div>
+    
+        <div id="hyperlink" value="Nutzungsbedingungen">
+            <a href="Nutzungsbedingungen.html">Nutzungsbedingungen</a>
+        </div>
+        
+        <div id="hyperlink" value="Projektbeschreibung">
+            <a href="Projektbeschreibung.html">Projektbeschreibung</a>
+        </div>
+    </footer>
+
+    <script>
+        async function sendPrompt(output) {      
+        const url = 'http://127.0.0.1:8080/prompt';
+       
+        const options = {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'text/plain'
+            },
+            body: output,
+            mode: 'cors'
+           
+        };
+ 
+        try {
+            const response = await fetch(url, options)
+            .then(response => response.json())
+            .then(response => response.choices[0].message.content)
+            .then(data => console.log(response))
+            .catch(error => console.error('Fehler beim Abrufen der Nachricht:', error));
+           
+            document.getElementById('question').innerHTML += response;
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    </script>
 </body>
 </html>
