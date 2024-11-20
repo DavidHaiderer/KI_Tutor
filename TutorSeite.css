@@ -6,3 +6,9 @@
     padding: 2%;
     background-color: lightgray;
 }
+#question{
+    text-align: right;
+}
+#answer{
+    text-align: left;
+}
