@@ -16,20 +16,5 @@ body{
     height: 100vh;
     position: relative;
     background-size: 100%;
-}
-#video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-img{
-    float: left;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 100px;
-    height: 100px;
+    background-image: url('blubber.png');
 }
