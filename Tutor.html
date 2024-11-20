@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor</title>
+</head>
+<body>
+    <header>
+        <h1>Tutor</h1>
+    </header>
+    <br>
+    
+        <select name="topic" id="topic">
+          <option value="Mathematik">Mathematik</option>
+          <option value="Latein">Latein</option>
+          <option value="Programmieren">Programmieren</option>
+          <option value="Sport">Sport</option>
+        </select>
+        <label>Eingabe:</label><input name="question" id="question" type="text">
+
+        <button type="submit" onclick="sendPrompt(document.getElementById('question').value +'123Trenner321'+ document.getElementById('topic').value)">Senden</button>
+   
+    <div name="chatlog" id="chatlog"></div>
+    <footer></footer>
+    <script>
+        async function sendPrompt(output) {      
+        const url = 'http://127.0.0.1:8080/prompt'; 
+        event.preventDefault();
+        const options = {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'text/plain'
+            },
+            body: output,
+            mode: 'cors'
+            
+        };
+
+    
+            const response = await fetch(url, options)
+            .then(response => response.text())
+            .then(data => {
+                    console.log('Server response:', data);
+                    document.getElementById('chatlog').innerHTML += data.response;
+            })
+            .catch(error => console.error('Fehler beim Abrufen der Nachricht:', error));
+            
+            document.getElementById('question').innerHTML += response;
+     
+            console.error(error);
+        
+    }
+    </script>
+</body>
+</html>
