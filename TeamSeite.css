@@ -2,14 +2,16 @@
     margin-bottom:10%;
     padding: 2%;
     border-style: solid;
-    border-color: lightgray;
+    border-color: gray;
     text-align: right;
     height: 100px;
 }
 img{
     float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100px;
     height: 100px;
-    width: 85px;
 }
 #main{
     text-align: center;
@@ -17,7 +19,5 @@ img{
     margin-left: 30%;
     margin-right: 30%;
     padding: 2%;
-    border-style: solid;
-    border-color: lightgray;
-    border-radius: 5%;
+    background-color: lightgray;
 }

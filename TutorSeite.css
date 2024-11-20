@@ -5,3 +5,11 @@ img{
     width: 100px;
     height: 100px;
 }
+#main{
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 2%;
+    background-color: lightgray;
+}
