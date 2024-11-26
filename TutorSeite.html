@@ -8,51 +8,124 @@
     <link rel="stylesheet" href="TutorSeite.css">
 </head>
 <body>
-    <header>
-        <h1>Tutor</h1>
-    </header>
-    <br>
+    <nav>
+        <img src="Logo.png" id="pic">
+
+        <div id="HeadLine">
+            <br>
+            <h1>
+                Deine Persöhnliche KI-Tutor für alle Fragen
+            </h1>
+        </div>
+        <header id="header">
+            <div id="hyperlink" value="Landingpage">
+                <a href="Landingpage.html">Landingpage</a>
+            </div>
+
+            <div id="hyperlink" value="Erklaerungsseite">
+                <a href="Erklaerung.html">Erklaerung</a>
+            </div>
+            
+            <div id="hyperlink" value="TeamSeite">
+                <a href="TeamSeite.html">Team</a>
+            </div>
+
+            <div id="hyperlink" value="KontaktSeite">
+                <a href="KontaktSeite.html">Kontakt</a>
+            </div>
+        </header>
+    </nav>
     
+    <div name="chatlog" id="chatlog"></div>
+    
+    <div id="write">
         <select name="topic" id="topic">
-          <option value="Mathematik">Mathematik</option>
-          <option value="Latein">Latein</option>
-          <option value="Programmieren">Programmieren</option>
-          <option value="Sport">Sport</option>
+            <option value="Mathematik">Mathematik</option>
+            <option value="Latein">Latein</option>
+            <option value="Programmieren">Programmieren</option>
+            <option value="Sport">Sport</option>
         </select>
         <label>Eingabe:</label><input name="question" id="question" type="text">
-
-        <button type="submit" onclick="sendPrompt(document.getElementById('question').value +'123Trenner321'+ document.getElementById('topic').value)">Senden</button>
-   
-    <div name="chatlog" id="chatlog"></div>
-    <footer></footer>
-    <script>
-        async function sendPrompt(output) {      
-        const url = 'http://127.0.0.1:8080/prompt'; 
-        event.preventDefault();
-        const options = {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'text/plain'
-            },
-            body: output,
-            mode: 'cors'
-            
-        };
-
+        <button type="submit" onclick="sendPrompt()">Senden</button>
+        <button onclick="clearLocalStorage()">LocalStorage löschen</button>
+    </div>
+    <br>
+    <footer id="footer">
+        <div id="hyperlink" value="Datenschutz">
+            <a href="Datenschutz.html">Datenschutz</a>
+        </div>
     
-            const response = await fetch(url, options)
-            .then(response => response.text())
-            .then(data => {
-                    console.log('Server response:', data);
-                    document.getElementById('chatlog').innerHTML += data.response;
-            })
-            .catch(error => console.error('Fehler beim Abrufen der Nachricht:', error));
-            
-            document.getElementById('question').innerHTML += response;
-     
-            console.error(error);
+        <div id="hyperlink" value="Nutzungsbedingungen">
+            <a href="Nutzungsbedingungen.html">Nutzungsbedingungen</a>
+        </div>
         
-    }
+        <div id="hyperlink" value="Projektbeschreibung">
+            <a href="Projektbeschreibung.html">Projektbeschreibung</a>
+        </div>
+    </footer>
+ 
+    <script>
+        // Funktion zum Senden der Anfrage
+        async function sendPrompt() {      
+            const question = document.getElementById('question').value;
+            const topic = document.getElementById('topic').value;
+            const output = question + '123Trenner321' + topic;
+           
+            const url = 'http://127.0.0.1:8080/prompt';
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: output,
+                mode: 'cors'
+            };
+ 
+            try {
+                const response = await fetch(url, options);
+                const data = await response.text();
+                console.log('Server response:', data);
+ 
+                // Neue Chat-Nachricht in localStorage speichern
+                saveToLocalStorage(data);
+ 
+                // Anzeige aktualisieren
+                displayChat();
+            } catch (error) {
+                console.error('Fehler beim Abrufen der Nachricht:', error);
+            }
+        }
+ 
+        // Funktion zum Speichern von Chat in localStorage
+        function saveToLocalStorage(question, answer) {
+            let chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
+            chatHistory.push({ question, answer });
+            localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+        }
+ 
+        // Funktion zum Laden und Anzeigen des Chatverlaufs aus localStorage
+        function displayChat() {
+            const chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
+            let chatlog = document.getElementById('chatlog');
+            chatlog.innerHTML = ''; // Leeren, bevor neue Daten angezeigt werden
+ 
+            // Chat-Verlauf anzeigen
+            chatHistory.forEach(item => {
+                chatlog.innerHTML += item.question;
+            });
+        }
+ 
+        // Beim Laden der Seite den Chat-Verlauf anzeigen
+        window.onload = function() {
+            displayChat();
+        };
+ 
+        // Funktion zum Löschen des gesamten localStorage
+        function clearLocalStorage() {
+            localStorage.clear();
+            console.log('localStorage wurde gelöscht');
+            displayChat(); // Chatlog nach dem Löschen neu laden (wird nun leer sein)
+        }
     </script>
 </body>
 </html>

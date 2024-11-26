@@ -58,15 +58,9 @@ http.createServer(async function ListenForAnswerRequest(req, res){
 
       let stringForOutputChatBefore = "" + stringForOutputChat;
 
-      for(let i = 0; i<chat.length;i++){
-          if(i%2 != 0){
-              stringForOutputChat += '<div class="answer">' + chat[i] + '</div>';
-          }
-          else{
-              stringForOutputChat += '<div class="question">' + chat[i] + '</div>';
-          }
-      }
-      
+      stringForOutputChat = '<div class="question">' + InputForChatGPT + '</div>';
+      stringForOutputChat += '<div class="answer">' + output+ '</div>';
+
       fs.writeFileSync('chatHistory.txt',stringForOutputChat);
 
       res.writeHead(200, {

@@ -6,9 +6,32 @@
     padding: 2%;
     background-color: lightgray;
 }
-#question{
-    text-align: right;
+#chatlog{
+    margin: 5%;
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 20px;
+    padding: 2%;
+    width: 86%;
 }
-#answer{
+.answer{
     text-align: left;
+    margin-right: 45%;
+    width: 59%;
+    border-radius: 20px;
+    background-color: lightgray;
+    padding: 1%;
+}
+.question{
+    text-align: right;
+    margin-left: 65%;
+    border-radius: 20px;
+    background-color: lightgray;
+    padding: 1%
+} 
+#write{
+    margin-bottom: 10%;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
 }
