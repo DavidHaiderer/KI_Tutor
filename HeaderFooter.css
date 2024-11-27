@@ -48,6 +48,7 @@ footer{
     flex-direction: row;
     justify-content: space-evenly;
     text-align: center;
+    
     background-color:lightgray ;
     position: fixed;
     bottom: 0;  
@@ -55,5 +56,9 @@ footer{
 body {
     margin: 0;
     background-image: url('blubber.png');
-    background-size:100%;
+    background-size: cover; /* Skaliert das Bild, um die ganze Fläche zu decken */
+    background-position: center center; /* Positioniert das Bild zentriert */
+    background-attachment: fixed; /* Hält das Hintergrundbild beim Scrollen fixiert */
+    height: 100vh; /* Setzt die Höhe des Elements auf 100% der Ansichtshöhe */
+    margin: 0;
   }

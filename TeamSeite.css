@@ -6,6 +6,11 @@
     text-align: right;
     height: 100px;
 }
+button{
+    background-color: white;
+    border-width: 0cm;
+    width: 150px;
+}
 #main{
     text-align: center;
     margin-top: 3%;
