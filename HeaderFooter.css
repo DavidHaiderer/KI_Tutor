@@ -46,6 +46,7 @@ footer{
     flex-direction: row;
     justify-content: space-evenly;
     text-align: center;
+    
     background-color:lightgray ;
     position: fixed;
     bottom: 0;  
