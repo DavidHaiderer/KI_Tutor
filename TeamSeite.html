@@ -6,6 +6,7 @@
     <title>Über uns</title>
     <link rel="stylesheet" href="HeaderFooter.css">
     <link rel="stylesheet" href="TeamSeite.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
     <nav>
@@ -19,31 +20,31 @@
         </div>
         <header id="header">
             <div id="hyperlink" value="Landingpage">
-                <a href="Landingpage.html">Landingpage</a>
+                <button onclick="window.location.href='Landingpage.html';">Landingpage</button>
             </div>
 
             <div id="hyperlink" value="TutorSeite">
-                <a href="TutorSeite.html">Tutor</a>
+                <button onclick="window.location.href='TutorSeite.html';">Tutor</button>
             </div>
-            
+
             <div id="hyperlink" value="Erklaerungsseite">
-                <a href="Erklaerung.html">Erklärung</a>
+                <button onclick="window.location.href='Erklaerung.html';">Erklärung</button>
             </div>
 
             <div id="hyperlink" value="KontaktSeite">
-                <a href="KontaktSeite.html">Kontakt</a>
+                <button onclick="window.location.href='KontaktSeite.html';">Kontakt</button>
             </div>
         </header>
     </nav>
-    
+
     <div id="main">
         <div id="fred" class="introduction">
             <img src="Frederick.png">
             Frederick Grurl
             <br>
-            31 Jahre alt, HTL-Abbrecher, übergewichtig, hässlich, fetter als der Türrahmen
+            18 Jahre alt, HTL-Schüler
             <br>
-            Zuständig für node.js und Java Script       
+            Zuständig für node.js und JavaScript       
         </div>
         <div id="dav" class="introduction">
             <img src="David.png">
@@ -51,7 +52,7 @@
             <br>
             17 Jahre alt, HTL-Schüler
             <br>
-            Zuständig für html und CSS    
+            Zuständig für HTML und CSS    
         </div>
         <div id="Simon" class="introduction">
             <img src="Simon.png">
@@ -59,7 +60,7 @@
             <br>
             17 Jahre alt, HTL-Schüler
             <br>
-            Zuständig für html und CSS   
+            Zuständig für HTML und CSS   
         </div>
         <div id="joni" class="introduction">
             <img src="Jonas.png">
@@ -67,30 +68,37 @@
             <br>
             16 Jahre alt, HTL-Schüler
             <br>
-            Zuständig für node.js und Java Script 
+            Zuständig für node.js und JavaScript 
         </div>
         <div>
-            Projekt: Entwicklung einer Interaktiven Website, die einen Tutor über die Open AI-API integriert.
+            Projekt: Entwicklung einer interaktiven Website, die einen Tutor über die Open AI-API integriert.
             <br>
-            In diesem Projekt sollen die Schüler lernen in Teams zu arbeiten, sich selbst zu organisieren und eine eigene Webanwendung zu entwickeln
+            In diesem Projekt sollen die Schüler lernen, in Teams zu arbeiten, sich selbst zu organisieren und eine eigene Webanwendung zu entwickeln.
         </div>
     </div>
     <br>
     <br>
-    <br>
-    <br>
-    <footer id="footer">
-        <div id="hyperlink" value="Datenschutz">
-            <a href="Datenschutz.html">Datenschutz</a>
-        </div>
     
-        <div id="hyperlink" value="Nutzungsbedingungen">
-            <a href="Nutzungsbedingungen.html">Nutzungsbedingungen</a>
-        </div>
-        
-        <div id="hyperlink" value="Projektbeschreibung">
-            <a href="Projektbeschreibung.html">Projektbeschreibung</a>
-        </div>
-    </footer>
+
+    <div id="mapbox">
+        <h1>Standort der HTL Waidhofen</h1>
+        <div id="map"></div> 
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script src="map.js"></script>
+<br>
+        <footer id="footer">
+            <div id="hyperlink" value="Datenschutz">
+                <button onclick="window.location.href='Datenschutz.html';">Datenschutz</button>
+            </div>
+
+            <div id="hyperlink" value="Nutzungsbedingungen">
+                <button onclick="window.location.href='Nutzungsbedingungen.html';">Nutzungsbedingungen</button>
+            </div>
+            
+            <div id="hyperlink" value="Projektbeschreibung">
+                <button onclick="window.location.href='Projektbeschreibung.html';">Projektbeschreibung</button>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

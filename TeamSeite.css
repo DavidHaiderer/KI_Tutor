@@ -6,6 +6,11 @@
     text-align: right;
     height: 100px;
 }
+button{
+    background-color: white;
+    border-width: 0cm;
+    width: 150px;
+}
 #main{
     text-align: center;
     margin-top: 3%;
@@ -18,4 +23,17 @@ img{
     float: left;
     height: 100px;
     width: 100px;
+}
+#map {
+    height: 500px;
+    width: 100%;
+}
+#mapbox{
+    width: 80%;
+    text-align: center; 
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 300px;
+    padding: 2%;
+    background-color: lightgray;
 }
