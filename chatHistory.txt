@@ -1,0 +1,7 @@
+<div class="question">Es geht um das Thema Mathematik und die Frage ist: Hallo was ist der Phytagoras?</div><div class="answer">Hallo! Ich glaube, du meinst den "Pythagoras". Pythagoras war ein antiker griechischer Mathematiker und Philosoph, der um 570 v. Chr. geboren wurde. Er ist vor allem bekannt für den nach ihm benannten Satz des Pythagoras, der eine fundamentale Beziehung in der Geometrie beschreibt.
+
+Der Satz des Pythagoras lautet: In einem rechtwinkligen Dreieck ist die Summe der Quadrate der Längen der beiden Katheten (die beiden kürzeren Seiten des Dreiecks) gleich dem Quadrat der Länge der Hypotenuse (die längste Seite des Dreiecks gegenüber dem rechten Winkel). Mathematisch wird dies ausgedrückt als: 
+
+\[ a^2 + b^2 = c^2 \]
+
+wobei \(a\) und \(b\) die Längen der Katheten sind und \(c\) die Länge der Hypotenuse. Dieser Satz ist ein fundamentales Konzept in der Geometrie und wird häufig verwendet, um Entfernungen und Längen in verschiedenen geometrischen Kontexten zu berechnen.</div>

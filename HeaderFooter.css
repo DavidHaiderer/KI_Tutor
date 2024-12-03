@@ -53,6 +53,7 @@ footer{
     background-color:lightgray;
     position: fixed;
     bottom: 0;
+    z-index: 1111111111111;
 }
 body {
     margin: 0;

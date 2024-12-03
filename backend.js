@@ -107,7 +107,6 @@ function handleError(error) {
     console.error(error);
 }
 //#endregion
-
 function handleContactFormular(req,res){
     let input = req.url + "";
 
@@ -115,7 +114,7 @@ function handleContactFormular(req,res){
     let Email = input.split("email=")[1].split("&")[0];
     let Betreff = input.split("betreff=")[1].split("&")[0];
     let Message = input.split("message=")[1].split("&")[0];
-
-    fs.writeFileSync('ContactFormular.txt','Betreff: ' + Betreff +  '\nName: ' + Name + '\nEmail: ' + Email + '\nMessage: ' + Message + '\n'+'\n\n');
-
+    let text=fs.readFileSync('ContactFormular.txt','utf8');
+    fs.writeFileSync('ContactFormular.txt',text+ '\nBetreff: ' + Betreff +  '\nName: ' + Name + '\nEmail: ' + Email + '\nMessage: ' + Message + '\n'+'\n\n');
+  res.end();
 }
