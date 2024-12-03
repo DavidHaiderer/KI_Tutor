@@ -4,10 +4,42 @@
     justify-content: space-evenly;
     text-align: center;
 }
-nav{
+nav {
+    font-size: 24px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color:lightgrey;
-    border-bottom: 2px solid white;
+    background-color: lightgray;
+    padding: 10px 0;
+    z-index: 1000;
+    align-items: center;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+nav a:hover {
+    color: blue;
+}
+#main {
+    padding-top: 60px;
+}
+.separator {
+    margin: 0 10px;
+    color: black;
 }
 .picture{
     float: left;
@@ -42,25 +74,41 @@ h1{
     width: 20%;
     text-align: center;
     color: black ;    
-}
-footer{
-    border-top: 2px solid white;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    text-align: center;
-    background-color:lightgray;
+}footer{
+    font-size: 24px;
+    font-weight: bold;
     position: fixed;
     bottom: 0;
-    z-index: 1111111111111;
+    left: 0;
+    width: 100%;
+    background-color: lightgray;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 10000000;
 }
-body {
+footer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+footer li{
+    margin: 0 15px; 
+}
+footer a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+footer a:hover{
+    color: blue;
+}
+body{
     margin: 0;
     background-image: url('blubber.png');
-    background-size: cover; /* Skaliert das Bild, um die ganze Fläche zu decken */
-    background-position: center center; /* Positioniert das Bild zentriert */
-    background-attachment: fixed; /* Hält das Hintergrundbild beim Scrollen fixiert */
-    height: 100vh; /* Setzt die Höhe des Elements auf 100% der Ansichtshöhe */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
     margin: 0;
 }

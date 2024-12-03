@@ -13,34 +13,23 @@ button{
 }
 #main{
     text-align: center;
-    margin-top: 3%;
+    margin-top: 8%;
     margin-left: 30%;
     margin-right: 30%;
     padding: 2%;
     background-color: lightgray;
     border: 2px solid white;
 }
-#map {
-
-
-    
-        height: 500px;
-    
-        width: 100%;
-    }
-    
-    #mapbox{
-        width: 80%;
-        text-align: center; 
-    
-        margin-left: 100px;
-    
-        margin-right: 100px;
-    
-        margin-bottom: 300px;
-    
-        padding: 2%;
-    
-        background-color: lightgray;
-    	
-    }
+#map{
+    height: 500px;
+    width: 100%;
+}
+#mapbox{
+    width: 80%;
+    text-align: center; 
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 300px;
+    padding: 2%;
+    background-color: lightgray;
+}
