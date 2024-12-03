@@ -1,16 +1,6 @@
 h4{
     text-align: center;
 }
-#JetztStarten{
-    margin-top: 1%;
-    margin-left: 45%;
-    margin-right: 45%;
-    border-radius: 10%;
-    border-style: none;
-    background-color: lightgray;
-    height: auto;
-    width: 10%;
-}
 body{
     overflow: hidden;
     height: 100vh;
@@ -20,4 +10,11 @@ body{
 }
 #main{
     margin-top: 3%;
+}
+button{
+    margin-left: 45%;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    height: 30px;
 }

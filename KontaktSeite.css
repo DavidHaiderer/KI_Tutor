@@ -1,13 +1,16 @@
-label{
-    display: inline-block;
-    width: 10%;
-    text-align: right;
+input{
+    background-color: lightgray;
+    width: 60%;
     margin-right: 5%;
-    margin-bottom: 1.3%;
+    border: 2px solid gray;
+    height: 30px;
+    margin-bottom: 1%;
 }
 #button{
-    margin-top: 5%;
-    margin-bottom: 10%;
+    border-radius: 20px;
+    border: 2px solid gray;
+    width: 150px;
+    height: 30px;
 }
 #main{
     text-align: center;
@@ -16,4 +19,15 @@ label{
     margin-right: 30%;
     padding: 2%;
     background-color: lightgray;
+}
+#names{
+    float: right;
+    text-align: left;
+}
+#mailAdresses{
+    text-align: left;
+}
+#data{
+    margin-left: 10%;
+    width: 80%;
 }

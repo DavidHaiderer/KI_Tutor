@@ -12,6 +12,7 @@
     width: 86%;
 }
 .answer{
+    border: none;
     text-align: left;
     margin-right: 45%;
     width: 59%;
@@ -20,6 +21,7 @@
     padding: 1%;
 }
 .question{
+    border: none;
     text-align: right;
     margin-left: 65%;
     border-radius: 20px;
@@ -27,6 +29,7 @@
     padding: 1%
 } 
 #write{
+    border: none;
     text-align: center;
     margin-bottom: 10%;
     width: 60%;
@@ -34,22 +37,26 @@
     margin-right: 20%;
 }
 #submitButton{
+    border: none;
     width: 7%;
     height: 30px;
     border-radius: 20px;
     
 }
 #deleteStorage{
+    border: none;
     width: 15%;
     height: 30px;
     border-radius: 20px;
 }
 #question{
+    border: none;
     width: 30%;
     height: 30px;
     border-radius: 20px;
 }
 #topic{
+    border: none;
     width: auto;
     height: 30px;
     border-radius: 20px;
