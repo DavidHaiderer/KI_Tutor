@@ -5,6 +5,7 @@
     text-align: center;
 }
 nav {
+    border-radius: 0px;
     font-size: 24px;
     font-weight: bold;
     position: fixed;
@@ -75,6 +76,7 @@ h1{
     text-align: center;
     color: black ;    
 }footer{
+    border-radius: 0px;
     font-size: 24px;
     font-weight: bold;
     position: fixed;

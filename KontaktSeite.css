@@ -5,6 +5,7 @@ input{
     border: 2px solid gray;
     height: 30px;
     margin-bottom: 1%;
+    padding: 5px;
 }
 #button{
     border-radius: 20px;
@@ -13,6 +14,7 @@ input{
     height: 30px;
 }
 #main{
+    border: 2px solid white;
     text-align: center;
     margin-top: 8%;
     margin-left: 30%;
@@ -21,13 +23,18 @@ input{
     background-color: lightgray;
 }
 #names{
-    float: right;
     text-align: left;
 }
 #mailAdresses{
+    float: right;
     text-align: left;
 }
 #data{
     margin-left: 10%;
     width: 80%;
+    border: 2px solid gray;
+    padding: 10px;
+}
+*{
+    border-radius: 20px;
 }

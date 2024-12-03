@@ -25,6 +25,7 @@ button{
     width: 100%;
 }
 #mapbox{
+    border: 2px solid white;
     width: 80%;
     text-align: center; 
     margin-left: 100px;
@@ -32,4 +33,7 @@ button{
     margin-bottom: 300px;
     padding: 2%;
     background-color: lightgray;
+}
+*{
+    border-radius: 20px;
 }
