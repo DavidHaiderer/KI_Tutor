@@ -1,10 +1,7 @@
 #main{
     text-align: center;
-    margin-top: 3%;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-top: 5%;
     padding: 2%;
-    background-color: lightgray;
 }
 #chatlog{
     margin: 5%;
@@ -48,11 +45,9 @@
     border-radius: 20px;
 }
 #question{
-    width: auto;
+    width: 30%;
     height: 30px;
     border-radius: 20px;
-    text-align: center;
-
 }
 #topic{
     width: auto;

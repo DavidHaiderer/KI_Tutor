@@ -9,74 +9,65 @@
 </head>
 <body>
     <nav>
-        <img class="logo" src="Logo.png">
-        <header id="header">
-            <div id="hyperlink" value="Landingpage">
-                <a href="Landingpage.html">Landingpage</a>
-            </div>
-
-            <div id="hyperlink" value="Erklaerungsseite">
-                <a href="Erklaerung.html">Erklaerung</a>
-            </div>
-
-            <div id="hyperlink" value="TeamSeite">
-                <a href="TeamSeite.html">Team</a>
-            </div>
-
-            <div id="hyperlink" value="KontaktSeite">
-                <a href="KontaktSeite.html">Kontakt</a>
-            </div>
-        </header>
+        <img class="logo" src="Logo.png" id="pic">
+        <ul>
+            <li><a href="Landingpage.html">Landingpage</a></li>
+            <li><span class="separator">|</span></li>
+            <li><a href="Erklaerung.html">Erklärung</a></li>
+            <li><span class="separator">|</span></li>
+            <li><a href="TeamSeite.html">Team</a></li>
+            <li><span class="seperator">|</span></li>
+            <li><a href="KontaktSeite.html">Kontakt</a></li>
+            <li><span class="seperator"></span></li>
+        </ul>
     </nav>
     
-    <div id="HeadLine">
-        <br>
-        <h2>
-            Dein Persöhnlicher KI-Tutor für alle Fragen
-        </h2>
-    </div>
+    <div id="main">
+        <div id="HeadLine">
+            <br>
+            <h2>
+                Dein Persöhnlicher KI-Tutor für alle Fragen
+            </h2>
+        </div>
 
-    <br>
-    
-    <div name="chatlog" id="chatlog"></div>
-    
-    <div id="write">
-        <select name="topic" id="topic">
-            <option value="English">English</option>
-            <option value="Deutsch">Deutsch</option>
-            <option value="Latein">Latein</option>
-            <option value="Chinesisch">Chinesisch</option>
-            <option value="Sprachen generell">Sprachen generell</option>
-            <option value="Mathematik">Mathematik</option>
-            <option value="Sport">Sport</option>
-            <option value="Geschichte">Geschichte</option>
-            <option value="Biologie">Biologie</option>
-            <option value="Elektrotechnik">Elektrotechnik</option>
-            <option value="Javascript">Javascript</option>
-            <option value="C#">C#</option>
-            <option value="Java">Java</option>
-            <option value="Python">Python</option>            
-            <option value="Programmieren generell">Programmieren generell</option>
-            <option value="Anderes Thema">Anderes Thema</option>
-        </select>
+        <br>
         
-        <input name="question" placeholder="Eingabe" id="question" type="text">
-        <button id="submitButton" type="submit" onclick="sendPrompt()">Senden</button>
-        <button id="deleteStorage" onclick="clearLocalStorage()">Verlauf löschen</button>
+        <div name="chatlog" id="chatlog"></div>
+        
+        <div id="write">
+            <select name="topic" id="topic">
+                <option value="English">English</option>
+                <option value="Deutsch">Deutsch</option>
+                <option value="Latein">Latein</option>
+                <option value="Chinesisch">Chinesisch</option>
+                <option value="Sprachen generell">Sprachen generell</option>
+                <option value="Mathematik">Mathematik</option>
+                <option value="Sport">Sport</option>
+                <option value="Geschichte">Geschichte</option>
+                <option value="Biologie">Biologie</option>
+                <option value="Elektrotechnik">Elektrotechnik</option>
+                <option value="Javascript">Javascript</option>
+                <option value="C#">C#</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>            
+                <option value="Programmieren generell">Programmieren generell</option>
+                <option value="Anderes Thema">Anderes Thema</option>
+            </select>
+            
+            <input name="question" placeholder="Eingabe" id="question" type="text">
+            <button id="submitButton" type="submit" onclick="sendPrompt()">Senden</button>
+            <button id="deleteStorage" onclick="clearLocalStorage()">Verlauf löschen</button>
+        </div>
     </div>
     <br>
-    <footer id="footer">
-        <div id="hyperlink" value="Datenschutz">
-            <a href="Datenschutz.html">Datenschutz</a>
-        </div>
-    
-        <div id="hyperlink" value="Nutzungsbedingungen">
-            <a href="Nutzungsbedingungen.html">Nutzungsbedingungen</a>
-        </div>
-        
-        <div id="hyperlink" value="Projektbeschreibung">
-            <a href="Projektbeschreibung.html">Projektbeschreibung</a>
-        </div>
+    <footer>
+        <ul>
+            <li><a href="Datenschutz.html">Datenschutz</a></li>
+            <li><span class="seperator"></span>|</li>
+            <li><a href="Nutzungsbedingungen.html">Nutzungsbedingungen</a></li>
+            <li><span class="seperator"></span>|</li>
+            <li><a href="Projektbeschreibung.html">Projektbeschreibung</a></li>
+        </ul>
     </footer>
  
     <script>

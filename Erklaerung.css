@@ -1,6 +1,8 @@
 #main{
-    margin-top: 5%;
+    margin-top: 3%;
     margin-left: 25%;
     margin-right: 25%;
+}
+video{
     border: 2px solid white;
 }
