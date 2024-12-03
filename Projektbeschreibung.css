@@ -1,3 +1,7 @@
 body{
     background-image: none;
 }
+#main{
+    margin-left: 30%;
+    margin-right: 30%;
+}

@@ -18,7 +18,7 @@
             <div id="hyperlink" value="Erklaerungsseite">
                 <a href="Erklaerung.html">Erklaerung</a>
             </div>
-            
+
             <div id="hyperlink" value="TeamSeite">
                 <a href="TeamSeite.html">Team</a>
             </div>
@@ -51,7 +51,6 @@
             <option value="Sport">Sport</option>
             <option value="Geschichte">Geschichte</option>
             <option value="Biologie">Biologie</option>
-            <option value="Javascript">Javascript</option>
             <option value="Elektrotechnik">Elektrotechnik</option>
             <option value="Javascript">Javascript</option>
             <option value="C#">C#</option>
@@ -61,9 +60,9 @@
             <option value="Anderes Thema">Anderes Thema</option>
         </select>
         
-        <label>Eingabe:</label><input name="question" id="question" type="text">
-        <button type="submit" onclick="sendPrompt()">Senden</button>
-        <button onclick="clearLocalStorage()">LocalStorage löschen</button>
+        <input name="question" placeholder="Eingabe" id="question" type="text">
+        <button id="submitButton" type="submit" onclick="sendPrompt()">Senden</button>
+        <button id="deleteStorage" onclick="clearLocalStorage()">Verlauf löschen</button>
     </div>
     <br>
     <footer id="footer">
