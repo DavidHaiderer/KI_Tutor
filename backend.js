@@ -4,7 +4,6 @@ const http = require('http');
 const fs = require('fs');
 const axios = require('axios');
 const path = require('path');
-require('dotenv').config();
 const url = 'https://api.openai.com/v1/chat/completions';
 const express = require('express');
 const { send } = require('process');
