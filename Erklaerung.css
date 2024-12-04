@@ -6,3 +6,54 @@
 video{
     border: 2px solid white;
 }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: gray;
+    margin: 0;
+    padding: 0;
+}
+#FAQ{
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+h1{
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+.faq{
+    margin-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+.faq h2{
+    background-color: gray;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.faq h2:hover{
+    background-color: gray;
+}
+.answer{
+    display: none;
+    padding: 15px;
+    background-color: white;
+    border-left: 4px solid gray;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+h2{
+    text-align: center;
+    color: black;
+}
